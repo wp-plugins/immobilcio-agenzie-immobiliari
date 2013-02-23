@@ -1,0 +1,431 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ImmobilCIO\n"
+"POT-Creation-Date: 2013-02-22 17:25+0100\n"
+"PO-Revision-Date: 2013-02-22 17:33+0100\n"
+"Last-Translator: Davide Tommasin <davide.tommasin@gmail.com>\n"
+"Language-Team: CMS-Italia.org <info@CMS-Italia.org>\n"
+"Language: Italiano\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: __;_\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../index.php:34
+msgid "ImmobilCIO - Real Estate Management"
+msgstr ""
+
+#: ../index.php:93 ../index.php:94
+msgid "Property"
+msgstr ""
+
+#: ../index.php:144
+msgid "Real Estate Management Module"
+msgstr ""
+
+#: ../index.php:151
+msgid "General Details"
+msgstr "Dettagli Generali"
+
+#: ../index.php:152
+msgid "Details of home"
+msgstr "Dettagli immobile"
+
+#: ../index.php:157
+msgid "For Sale/Rent?*"
+msgstr "In Vendita/Affitto?*"
+
+#: ../index.php:158
+msgid "Type of adv"
+msgstr ""
+
+#: ../index.php:167
+msgid "Price"
+msgstr ""
+
+#: ../index.php:168
+msgid "Example: 145.000 or Reserved"
+msgstr "Esempio: 145.000 o Riservato"
+
+#: ../index.php:173
+msgid "Bedrooms"
+msgstr "Stanze"
+
+#: ../index.php:174
+msgid "numbers of bedrooms (optional)"
+msgstr ""
+
+#: ../index.php:191
+msgid "Bathrooms"
+msgstr "Bagni"
+
+#: ../index.php:192
+msgid "numbers of bathrooms (optional)"
+msgstr ""
+
+#: ../index.php:209
+msgid "Area * "
+msgstr "Area *"
+
+#: ../index.php:210
+msgid "( Sq.Ft. ) (optional)"
+msgstr "( Metri Quadri) (opzionale)"
+
+#: ../index.php:215
+msgid "Geolocalization Details"
+msgstr "Dettagli per Geolocalizzazione"
+
+#: ../index.php:216
+msgid ""
+"Details of address - All fields are request for search engine features on "
+"your web site."
+msgstr ""
+"Dettagli indirizzo - campi non obbligatori ma utili per l' indicizzazione "
+"sui motori di ricerca del sito e sul web"
+
+#: ../index.php:221
+msgid "Address"
+msgstr "Indirizzo"
+
+#: ../index.php:227
+msgid "City"
+msgstr "Ciattà"
+
+#: ../index.php:233
+msgid "Country"
+msgstr "Provincia"
+
+#: ../index.php:239
+msgid "State"
+msgstr ""
+
+#: ../index.php:245
+msgid "Zip code"
+msgstr ""
+
+#: ../index.php:251
+msgid "Energy Performance Certificate"
+msgstr ""
+
+#: ../index.php:257 ../index.php:481
+msgid "ACE"
+msgstr "ACE"
+
+#: ../index.php:272
+msgid "IPE"
+msgstr ""
+
+#: ../index.php:278
+msgid "IPE Unity"
+msgstr ""
+
+#: ../index.php:283
+msgid "kWh/m2 year"
+msgstr ""
+
+#: ../index.php:284
+msgid "kWh/m3 year"
+msgstr ""
+
+#: ../index.php:288
+msgid "About Agent Contacts"
+msgstr "Contatti Agente immobiliare"
+
+#: ../index.php:289
+msgid ""
+"You can put custom contact detail on this fields (example: of your clients) "
+"otherwise ImmobilCIO gets details from your WordPress profile."
+msgstr ""
+
+#: ../index.php:294
+msgid "Telephone"
+msgstr ""
+
+#: ../index.php:300
+msgid "Mail"
+msgstr ""
+
+#: ../index.php:328
+msgid "Edit Price Type"
+msgstr "Modifica fascia di prezzo"
+
+#: ../index.php:329
+msgid "Update Price Type"
+msgstr ""
+
+#: ../index.php:330
+msgid "Add New Price Type"
+msgstr "Nuova fascia di prezzo"
+
+#: ../index.php:331
+msgid "New Price Type"
+msgstr ""
+
+#: ../index.php:397
+msgid "Edit Zone Type"
+msgstr "Modifica zona"
+
+#: ../index.php:398
+msgid "Update Zone Type"
+msgstr ""
+
+#: ../index.php:399
+msgid "Add New Zone Type"
+msgstr "Aggiungi nuova zona"
+
+#: ../index.php:400
+msgid "New Zone Type"
+msgstr ""
+
+#: ../index.php:422
+msgid "Edit Type"
+msgstr "Modifica tipologia immobile"
+
+#: ../index.php:423
+msgid "Update Type"
+msgstr ""
+
+#: ../index.php:424
+msgid "Add New Type"
+msgstr "Aggiungi nuovo tipo di immobile"
+
+#: ../index.php:425
+msgid "New Type"
+msgstr ""
+
+#: ../index.php:438
+msgid "Ace"
+msgstr "Ace"
+
+#: ../index.php:451 ../index.php:454
+msgid "undefined"
+msgstr ""
+
+#: ../index.php:476
+msgid "Photo"
+msgstr ""
+
+#: ../index.php:477
+msgid "Name of proprerty"
+msgstr ""
+
+#: ../index.php:478
+msgid "Status"
+msgstr ""
+
+#: ../index.php:479
+msgid "Type"
+msgstr ""
+
+#: ../index.php:480
+msgid "Adress"
+msgstr "Indirizzo"
+
+#: ../index.php:482
+msgid "Date"
+msgstr "Data"
+
+#: ../index.php:516 ../index.php:530 ../index.php:544
+msgid " "
+msgstr ""
+
+#: ../index.php:519 ../index.php:533 ../index.php:547
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+#: ../index.php:592
+msgid "From: "
+msgstr "Da:"
+
+#: ../index.php:593
+msgid "To: "
+msgstr ""
+
+#: ../index.php:594
+msgid "Give me route"
+msgstr "Dammi il percorso"
+
+#: ../index.php:691
+msgid "Staus: "
+msgstr ""
+
+#: ../index.php:692
+msgid "Real Estate Type"
+msgstr ""
+
+#: ../index.php:701
+msgid "Square Meter "
+msgstr ""
+
+#: ../index.php:702 ../index.php:806
+msgid "Price: "
+msgstr ""
+
+#: ../index.php:703
+msgid "Bedrooms: "
+msgstr "Stanze:"
+
+#: ../index.php:704
+msgid "Bathrooms: "
+msgstr "Bagni:"
+
+#: ../index.php:705
+msgid "ACE: "
+msgstr "ACE:"
+
+#: ../index.php:706
+msgid "Address: "
+msgstr "Indirizzo:"
+
+#: ../index.php:712
+msgid "Telephone: "
+msgstr ""
+
+#: ../index.php:713
+msgid "Mail: "
+msgstr ""
+
+#: ../index.php:821
+msgid "Select Prices Category"
+msgstr ""
+
+#: ../index.php:853
+msgid "Select Zones Category"
+msgstr ""
+
+#: ../index.php:886
+msgid "Select Type Category"
+msgstr ""
+
+#: ../index.php:1063
+msgid "Local Avatar Permissions"
+msgstr ""
+
+#: ../index.php:1077
+msgid ""
+"Only allow users with file upload capabilities to upload local avatars "
+"(Authors and above)"
+msgstr ""
+
+#: ../index.php:1103
+msgid "No local avatar is set. Use the upload field to add a local avatar."
+msgstr ""
+
+#: ../index.php:1106
+msgid "Delete local avatar"
+msgstr "Cancella avatar"
+
+#: ../index.php:1107
+msgid ""
+"Replace the local avatar by uploading a new avatar, or erase the local "
+"avatar (falling back to a gravatar) by checking the delete option."
+msgstr ""
+
+#: ../index.php:1111
+msgid "No local avatar is set. Set up your avatar at Gravatar.com."
+msgstr ""
+
+#: ../index.php:1113
+msgid ""
+"You do not have media management permissions. To change your local avatar, "
+"contact the blog administrator."
+msgstr ""
+
+#: ../init.php:606
+msgid "Please Try Again"
+msgstr ""
+
+#: ../init.php:623
+msgid "Remove Embed"
+msgstr ""
+
+#: ../init.php:629
+#, php-format
+msgid "No oEmbed Results Found for %s. View more info at"
+msgstr ""
+
+#: ../admin/panel.php:47 ../admin/panelORI.php:93
+msgid "ImmobilCIO Options Admin Page"
+msgstr ""
+
+#: ../admin/panel.php:48
+msgid "These are the options and instructions to configure and use ImmobilCIO."
+msgstr ""
+
+#: ../admin/panel.php:60
+msgid "Currency"
+msgstr "Valuta"
+
+#: ../admin/panel.php:71 ../admin/panelORI.php:128
+msgid "Activate Google Maps"
+msgstr "Attivazione Google Maps"
+
+#: ../admin/panel.php:75 ../admin/panelORI.php:132
+msgid ""
+"If you can activate maps of real estate in single post, you can check this "
+"option.<br /><span style=\"color:#666666;margin-left:2px;\">You can use "
+"shortcode for inserting map on your theme</span>"
+msgstr ""
+"Spunta questa opzione se vuoi attivare nelle schede immobili la Google Maps."
+"<br /><span style=\"color:#666666;margin-left:2px;\">Puoi utilizzare lo "
+"shortcode per inserire la mappa nel template.</span>"
+
+#: ../admin/panel.php:82 ../admin/panelORI.php:145
+msgid "Width - Google Maps"
+msgstr ""
+
+#: ../admin/panel.php:86
+msgid "Insert width in pixel"
+msgstr ""
+
+#: ../admin/panel.php:92 ../admin/panelORI.php:152
+msgid "Height - Google Maps"
+msgstr "Altezza - Google Maps"
+
+#: ../admin/panel.php:96
+msgid "Insert height in pixel"
+msgstr ""
+
+#: ../admin/panel.php:140 ../admin/panelORI.php:203
+msgid "Settings"
+msgstr ""
+
+#: ../admin/panelORI.php:94
+msgid ""
+"Below is a collection of sample controls you can use in your own Plugins. "
+"Or, you can analyse the code and learn how all the most common controls can "
+"be added to a Plugin options form. See the code for more details, it is "
+"fully commented."
+msgstr ""
+
+#: ../admin/panelORI.php:107
+msgid "Widget or post/page content"
+msgstr ""
+
+#: ../admin/panelORI.php:111
+msgid ""
+"If you want add real estate's details on content post check this option "
+"otherwise you can use theme widget"
+msgstr ""
+
+#: ../admin/panelORI.php:117
+msgid "Facebook share button"
+msgstr "Bottone di condivisione su Facebook"
+
+#: ../admin/panelORI.php:121
+msgid ""
+"If you want displayed facebook share button on single real estate page you "
+"can check this option."
+msgstr ""
+
+#: ../admin/panelORI.php:141
+msgid ""
+"Insert API Key<br /><span style=\"color:#666666;margin-left:2px;\">You can "
+"get API key from this URL: <a href=\"https://developers.google.com/maps/"
+"documentation/javascript/tutorial#api_key\">https://developers.google.com/"
+"maps/documentation/javascript/tutorial#api_key</a></span>"
+msgstr ""
