@@ -20,7 +20,7 @@ Immobilcio insert on single post:
 *	all details saved on metabox.
 *	Google Maps (on options page you can configure width and heigth for map)
 
-ImmobilCIO is multilanguages : you can create your localization and put it in `/immobilicio/lang/` directory with this example name: it_IT
+ImmobilCIO is multilanguages : you can create your localization and put it in `/immobilicio/lang/` directory with this example name: immobilcio-it_IT
 
 On options page you can activate or deactivate display maps on single post.
 
@@ -66,6 +66,9 @@ No, but if you enter them all will be beneficial to the search engines and all t
 
 == Changelog ==
 
+= 0.8.1 =
+Fixed problem with multilanguage support.
+
 = 0.8.0 =
 Nothing to declare
 
@@ -73,5 +76,3 @@ Nothing to declare
 
 = 0.8.0 =
 This is the first public release of ImmobiCIO Plugin
-
-

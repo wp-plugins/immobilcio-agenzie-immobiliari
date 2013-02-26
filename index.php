@@ -4,10 +4,10 @@
  * Plugin URI: http://www.CMS-Italia.Org/ImmobilCIO
  * Description: Plugin for real estate management
  * Author: Davide Tommasin
- * Version: 0.8
+ * Version: 0.8.1
  * Author URI: http://www.tommasin.org
  *    
- * @version 0.8.0
+ * @version 0.8.1
  * @copyright 2013 - 2016
  * @author Davide Tommasin (email: info@CMS-Italia.Org)
  * @link http://www.CMS-Italia.org
@@ -31,7 +31,7 @@
    */
   $config = array(    
 		'menu'=> 'settings',             //sub page to settings page
-		'page_title' => __('ImmobilCIO - Real Estate Management','cio'),       //The name of this page 
+		'page_title' => __('ImmobilCIO - Real Estate Management','immobilcio'),       //The name of this page 
 		'capability' => 'edit_themes',         // The capability needed to view the page 
 		'option_group' => 'demo_options',       //the name of the option to create in the database
 		'id' => 'admin_page',            // meta box id, unique per page
@@ -39,6 +39,20 @@
 		'local_images' => false,          // Use local or hosted images (meta box images for add/remove)
 		'use_with_theme' => false          //change path if used with theme set to true, false for a plugin or anything else for a custom path(default false).
   );  
+
+  // load_muplugin_textdomain( 'immobilcio', false, dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
+  // load_textdomain( 'immobilcio', 'lang');
+  
+function immobillang() {
+	if ( is_multisite() ) {
+			load_plugin_textdomain( 'immobilcio', basename( dirname( __FILE__ ) ) . 'lang', basename( dirname( __FILE__ ) ) . '/lang' );
+			load_plugin_textdomain( 'immobilcio', basename( dirname( __FILE__ ) ) . 'lang', 'immobilcio/lang' );
+		} else {
+			$lang_path = dirname( plugin_basename( __FILE__ ) ) . '/lang/';
+			load_plugin_textdomain( 'immobilcio', false, $lang_path );
+		}
+}
+add_action( 'init', 'immobillang' );
     
   /**
    * add singlehome post type on loop
@@ -90,8 +104,8 @@ add_action( 'admin_menu', 'change_post_menu_label' );
         register_post_type( 'singlehome',  
             array(  
                 'labels' => array(  
-                    'name' => __( 'Property' ),  
-                    'singular_name' => __( 'Property' )  
+                    'name' => __( 'Property','immobilcio' ),  
+                    'singular_name' => __( 'Property','immobilcio' )  
                 ),  
             'public' => true,  
             'menu_position' => 2,
@@ -141,21 +155,21 @@ function wpb_sample_metaboxes( $meta_boxes ) {
 
 	$meta_boxes[] = array(
 		'id' => 'custom-metabox-details',
-		'title' => __( 'Real Estate Management Module' ),
+		'title' => __( 'Real Estate Management Module','immobilcio' ),
 		'pages' => array('singlehome'), // post type
 		'context' => 'normal',
 		'priority' => 'high',
 		'show_names' => true, // Show field names on the left
 		'fields' => array(
 array(
-'name' => __('General Details'),
-'desc' => __('Details of home'),
+'name' => __('General Details','immobilcio'),
+'desc' => __('Details of home','immobilcio'),
 'id' => $prefix . 'gendet',
 'type' => 'title',
 ),
 array(
-'name' => __('For Sale/Rent?*'),
-'desc' => __('Type of adv'),
+'name' => __('For Sale/Rent?*','immobilcio'),
+'desc' => __('Type of adv','immobilcio'),
 'id' => $prefix . 'sale_rent',
 'type' => 'radio_inline',
 'options' => array(
@@ -164,14 +178,14 @@ array( 'name' => 'Rent', 'value' => 'rent', ),
 array( 'name' => 'Sold', 'value' => 'sold', ),
 )),
 array(
-'name' => __('Price'),
-'desc' => __('Example: 145.000 or Reserved'),
+'name' => __('Price','immobilcio'),
+'desc' => __('Example: 145.000 or Reserved','immobilcio'),
 'id' => $prefix . 'price',
 'type' => 'text_small',
 ),
 array(
-'name' => __('Bedrooms'),
-'desc' => __('numbers of bedrooms (optional)'),
+'name' => __('Bedrooms','immobilcio'),
+'desc' => __('numbers of bedrooms (optional)','immobilcio'),
 'id' => $prefix . 'bedrooms',
 'type' => 'select',
 'options' => array(
@@ -188,8 +202,8 @@ array( 'name' => '10+', 'value' => '10+', )
 ),
 ),
 array(
-'name' => __('Bathrooms'),
-'desc' => __('numbers of bathrooms (optional)'),
+'name' => __('Bathrooms','immobilcio'),
+'desc' => __('numbers of bathrooms (optional)','immobilcio'),
 'id' => $prefix . 'bathrooms',
 'type' => 'select',
 'options' => array(
@@ -206,56 +220,56 @@ array( 'name' => '10+', 'value' => '10+', )
 ),
 ),
 array(
-'name' => __('Area * '),
-'desc' => __('( Sq.Ft. ) (optional)'),
+'name' => __('Area * ','immobilcio'),
+'desc' => __('( Sq.Ft. ) (optional)','immobilcio'),
 'id' => $prefix . 'sqft',
 'type' => 'text_small',
 ),
 array(
-'name' => __('Geolocalization Details'),
-'desc' => __('Details of address - All fields are request for search engine features on your web site.'),
+'name' => __('Geolocalization Details','immobilcio'),
+'desc' => __('Details of address - All fields are request for search engine features on your web site.','immobilcio'),
 'id' => $prefix . 'geolocal',
 'type' => 'title',
 ),
 array(
-'name' => __('Address'),
-'desc' => __(''),
+'name' => __('Address','immobilcio'),
+'desc' => __('','immobilcio'),
 'id' => $prefix . 'address',
 'type' => 'text',
 ),
 array(
-'name' => __('City'),
-'desc' => __(''),
+'name' => __('City','immobilcio'),
+'desc' => __('','immobilcio'),
 'id' => $prefix . 'city',
 'type' => 'text',
 ),
 array(
-'name' => __('Country'),
-'desc' => __(''),
+'name' => __('Country','immobilcio'),
+'desc' => __('','immobilcio'),
 'id' => $prefix . 'country',
 'type' => 'text',
 ),
 array(
-'name' => __('State'),
-'desc' => __(''),
+'name' => __('State','immobilcio'),
+'desc' => __('','immobilcio'),
 'id' => $prefix . 'state',
 'type' => 'text',
 ),
 array(
-'name' => __('Zip code'),
-'desc' => __(''),
+'name' => __('Zip code','immobilcio'),
+'desc' => __('','immobilcio'),
 'id' => $prefix . 'zip',
 'type' => 'text',
 ),
 array(
-'name' => __('Energy Performance Certificate'),
-'desc' => __(''),
+'name' => __('Energy Performance Certificate','immobilcio'),
+'desc' => __('','immobilcio'),
 'id' => $prefix . 'energy',
 'type' => 'title',
 ),
 array(
-'name' => __('ACE'),
-'desc' => __(''),
+'name' => __('ACE','immobilcio'),
+'desc' => __('','immobilcio'),
 'id' => $prefix . 'ace',
 'type' => 'select',
 'options' => array(
@@ -269,14 +283,14 @@ array( 'name' => 'G', 'value' => 'G', )
 ),
 ),
 array(
-'name' => __('IPE'),
-'desc' => __(''),
+'name' => __('IPE','immobilcio'),
+'desc' => __('','immobilcio'),
 'id' => $prefix . 'ipe',
 'type' => 'text_small',
 ),
 array(
-'name' => __('IPE Unity'),
-'desc' => __(''),
+'name' => __('IPE Unity','immobilcio'),
+'desc' => __('','immobilcio'),
 'id' => $prefix . 'ipeunity',
 'type' => 'select',
 'options' => array(
@@ -285,20 +299,20 @@ array( 'name' => __('kWh/m3 year'), 'value' => __('kWh/m3 year'), ),
 ),
 ),
 array(
-'name' => __('About Agent Contacts'),
-'desc' => __('You can put custom contact detail on this fields (example: of your clients) otherwise ImmobilCIO gets details from your WordPress profile.'),
+'name' => __('About Agent Contacts','immobilcio'),
+'desc' => __('You can put custom contact detail on this fields (example: of your clients) otherwise ImmobilCIO gets details from your WordPress profile.','immobilcio'),
 'id' => $prefix . 'agent',
 'type' => 'title',
 ),
 array(
-'name' => __('Telephone'),
-'desc' => __(''),
+'name' => __('Telephone','immobilcio'),
+'desc' => __('','immobilcio'),
 'id' => $prefix . 'telephone',
 'type' => 'text',
 ),
 array(
-'name' => __('Mail'),
-'desc' => __(''),
+'name' => __('Mail','immobilcio'),
+'desc' => __('','immobilcio'),
 'id' => $prefix . 'mail',
 'type' => 'text',
 ),
@@ -325,10 +339,10 @@ array(
 'search_items' => 'Search Price Types',
 'popular_items' => 'Popular Price Types',
 'all_items' => 'All Price Types',
-'edit_item' => __( 'Edit Price Type' ),
-'update_item' => __( 'Update Price Type' ),
-'add_new_item' => __( 'Add New Price Type' ),
-'new_item_name' => __( 'New Price Type' )
+'edit_item' => __( 'Edit Price Type','immobilcio' ),
+'update_item' => __( 'Update Price Type','immobilcio' ),
+'add_new_item' => __( 'Add New Price Type','immobilcio' ),
+'new_item_name' => __( 'New Price Type','immobilcio' )
 ),
 'hierarchical' => 'false',
 'label' => 'Price Type' )
@@ -394,10 +408,10 @@ array(
 'search_items' => 'Search Zone Types',
 'popular_items' => 'Popular Zone Types',
 'all_items' => 'All Zone Types',
-'edit_item' => __( 'Edit Zone Type' ),
-'update_item' => __( 'Update Zone Type' ),
-'add_new_item' => __( 'Add New Zone Type' ),
-'new_item_name' => __( 'New Zone Type' )
+'edit_item' => __( 'Edit Zone Type','immobilcio' ),
+'update_item' => __( 'Update Zone Type','immobilcio' ),
+'add_new_item' => __( 'Add New Zone Type','immobilcio' ),
+'new_item_name' => __( 'New Zone Type','immobilcio' )
 ),
 'hierarchical' => 'false',
 'label' => 'Zone Type' )
@@ -419,10 +433,10 @@ array(
 'search_items' => 'Search Types',
 'popular_items' => 'Popular Types',
 'all_items' => 'All Types',
-'edit_item' => __( 'Edit Type' ),
-'update_item' => __( 'Update Type' ),
-'add_new_item' => __( 'Add New Type' ),
-'new_item_name' => __( 'New Type' )
+'edit_item' => __( 'Edit Type','immobilcio' ),
+'update_item' => __( 'Update Type','immobilcio' ),
+'add_new_item' => __( 'Add New Type','immobilcio' ),
+'new_item_name' => __( 'New Type','immobilcio' )
 ),
 'hierarchical' => 'false',
 'label' => 'Type' )
@@ -435,7 +449,7 @@ array(
 
 // Register the column
 function ace_column_register( $columns ) {
-	$columns['ACE'] = __( 'Ace', 'cert-en' );
+	$columns['ACE'] = __( 'Ace', 'immobilcio' );
 	return $columns;
 }
 
@@ -448,10 +462,10 @@ function ace_column_display( $column_name, $post_id ) {
  
 	$ace = get_post_meta($post_id, '_shd_ace', true);
 	if ( !$ace )
-		$ace = '<em>' . __( 'undefined', 'certificazione-energetica' ) . '</em>';
+		$ace = '<em>' . __( 'certificazione-energetica','immobilcio' ) . '</em>';
 	$ipe = get_post_meta($post_id, '_shd_ipe', true);
 	if ( !$ipe )
-		$ipe = '<em>' . __( 'undefined', 'certificazione-energetica' ) . '</em>';
+		$ipe = '<em>' . __( 'certificazione-energetica','immobilcio' ) . '</em>';
  
 	echo $ace.' / '.$ipe;
 }
@@ -473,13 +487,13 @@ function my_edit_singlehome_columns( $columns ) {
 
 	$columns = array(
 		'cb' => '<input type="checkbox" />',
-		'featimg' => __( 'Photo' ),
-		'title' => __( 'Name of proprerty' ),
-		'status' => __('Status'),
-		'type' => __( 'Type' ),
-		'address' => __( 'Adress' ),
-		'ace' => __( 'ACE' ),
-		'date' => __( 'Date' )
+		'featimg' => __( 'Photo','immobilcio' ),
+		'title' => __( 'Name of proprerty','immobilcio' ),
+		'status' => __('Status','immobilcio'),
+		'type' => __( 'Type','immobilcio' ),
+		'address' => __( 'Adress','immobilcio' ),
+		'ace' => __( 'ACE','immobilcio' ),
+		'date' => __( 'Date','immobilcio' )
 	);
 
 	return $columns;
@@ -513,10 +527,10 @@ function my_manage_singlehome_columns( $column, $post_id ) {
 		    $realaddress = $address0 .', '. $address1 .', '. $address2 .' '. $address3 .','. $address4;
 
 			if ( empty( $address0 ) && empty( $address1 ) && empty( $address2 ) && empty( $address3 ) && empty( $address4 ) && empty( $address5 ) )
-				echo __( ' ' );
+				echo __( ' ','immobilcio' );
 
 			else
-				printf( __( '%s' ), $realaddress );
+				printf( __( '%s','immobilcio' ), $realaddress );
 
 			break;
 			
@@ -527,7 +541,7 @@ function my_manage_singlehome_columns( $column, $post_id ) {
 			$status = get_post_meta( $post_id, '_shd_sale_rent', true );
 
 			if ( empty( $status ) )
-				echo __( ' ' );
+				echo __( ' ','immobilcio' );
 
 			else
 				printf( __( '%s' ), $status );
@@ -541,10 +555,10 @@ function my_manage_singlehome_columns( $column, $post_id ) {
 			$ace = get_post_meta( $post_id, '_shd_ace', true );
 
 			if ( empty( $ace ) )
-				echo __( ' ' );
+				echo __( ' ','immobilcio' );
 
 			else
-				printf( __( '%s' ), $ace );
+				printf( __( '%s','immobilcio' ), $ace );
 
 			break;
 
@@ -689,7 +703,7 @@ function custom_field_singlehome($detailshome) {
 
 	if( is_single() ) {
 	if(!empty($type)): $detailshome .= "<div style=\"border: 1px dotted #000000; margin-bottom: 10px;\"><ul><li>". __('Staus: ') . $type ."</li>"; endif;
-	if(!empty($count)): $detailshome .= "<li>". __('Real Estate Type') .": ";
+	if(!empty($count)): $detailshome .= "<li>". __('Real Estate Type','immobilcio') .": ";
 	if ( $count > 0 ) {
 		foreach ( $terms as $term ) {
 			$detailshome .= '<a href="'. get_bloginfo('url') ."/type/". $term->slug . '">';
@@ -698,19 +712,19 @@ function custom_field_singlehome($detailshome) {
 		}
 	}; endif;
 	$detailshome .= "</li>";
-	if(!empty($sqft)): $detailshome .= "<li>". __('Square Meter ') .": ". $sqft ."</li>"; endif;
-	if(!empty($price)): $detailshome .= "<li>". __('Price: ') .": ". $price ." ". $options['chk_currency'] ."</li>"; endif;
-	if(!empty($type)): $detailshome .= "<li>". __('Bedrooms: ') .": ". $bedrooms ."</li>"; endif;
-	if(!empty($bedrooms)): $detailshome .= "<li>". __('Bathrooms: ') .": ". $bathrooms ."</li>"; endif;
-	if(!empty($ace)): $detailshome .= "<li>". __('ACE: ') . $ace ." ". $ipe ." ". $ipeunity ."</li>"; endif;
-	if(!empty($address0)): $detailshome .= "<li>". __('Address: ') . $address0 .', '. $address1 .', '. $address2 .' '. $address3 .','. $address4 ."</li>"; endif;
+	if(!empty($sqft)): $detailshome .= "<li>". __('Square Meter ','immobilcio') .": ". $sqft ."</li>"; endif;
+	if(!empty($price)): $detailshome .= "<li>". __('Price: ','immobilcio') .": ". $price ." ". $options['chk_currency'] ."</li>"; endif;
+	if(!empty($type)): $detailshome .= "<li>". __('Bedrooms: ','immobilcio') .": ". $bedrooms ."</li>"; endif;
+	if(!empty($bedrooms)): $detailshome .= "<li>". __('Bathrooms: ','immobilcio') .": ". $bathrooms ."</li>"; endif;
+	if(!empty($ace)): $detailshome .= "<li>". __('ACE: ','immobilcio') . $ace ." ". $ipe ." ". $ipeunity ."</li>"; endif;
+	if(!empty($address0)): $detailshome .= "<li>". __('Address: ','immobilcio') . $address0 .', '. $address1 .', '. $address2 .' '. $address3 .','. $address4 ."</li>"; endif;
 	if(!empty($type)): $detailshome .= "</ul></div>"; endif;
 	
 	
 	
 		if(!empty($telephone) && !empty($mail)) {
 			$detailshome .= "<div style=\"border: 1px dotted #000000; margin-bottom: 10px;\"><ul><li>". __('Telephone: ') . $telephone ."</li>";
-			$detailshome .= "<li>". __('Mail: ') . $mail ."</li></ul></div>";
+			$detailshome .= "<li>". __('Mail: ','immobilcio') . $mail ."</li></ul></div>";
 			} else {
 				// get contacts detail's of blog's author - thelephone, skype, avatar...
 				if( get_post_type() == 'singlehome' ):
@@ -803,7 +817,7 @@ if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?
 			</li>
 		<?php
 			$price = get_post_meta($post->ID, '_shd_price', true);
-			echo "<li>". __('Price: ') . $price ."</li>";
+			echo "<li>". __('Price: ','immobilcio') . $price ."</li>";
 		?>
 		</ul>
 				<div style="clear: both;"></div>		
@@ -818,7 +832,7 @@ wp_reset_query();
 	function get_price_dropdown($taxonomies, $args){
     	$myterms = get_terms($taxonomies, $args);
     	$output ="<select name='price'>";
-    	$output .="<option value='#'>". __('Select Prices Category') ."</option>";
+    	$output .="<option value='#'>". __('Select Prices Category','immobilcio') ."</option>";
     	foreach($myterms as $term){
         	$root_url = get_bloginfo('url');
         	$term_taxonomy=$term->taxonomy;
@@ -850,7 +864,7 @@ wp_reset_query();
 	function get_zone_dropdown($taxonomies, $args){
     	$myterms = get_terms($taxonomies, $args);
     	$output ="<select name='zone'>";
-    	$output .="<option value='#'>". __('Select Zones Category') ."</option>";
+    	$output .="<option value='#'>". __('Select Zones Category','immobilcio') ."</option>";
     	foreach($myterms as $term){
         	$root_url = get_bloginfo('url');
         	$term_taxonomy=$term->taxonomy;
@@ -883,7 +897,7 @@ wp_reset_query();
 	function get_type_dropdown($taxonomies, $args){
     	$myterms = get_terms($taxonomies, $args);
     	$output ="<select name='type'>";
-    	$output .="<option value='#'>". __('Select Type Category') ."</option>";
+    	$output .="<option value='#'>". __('Select Type Category','immobilcio') ."</option>";
     	foreach($myterms as $term){
         	$root_url = get_bloginfo('url');
         	$term_taxonomy=$term->taxonomy;
@@ -961,17 +975,17 @@ function extra_user_profile_fields( $user ) { ?>
  
 <table class="form-table">
 <tr>
-<th><label for="cellophono"><?php _e("Telephone"); ?></label></th>
+<th><label for="cellophono"><?php _e("Telephone",'immobilcio'); ?></label></th>
 <td>
 <input type="text" name="cellophono" id="cellophono" value="<?php echo esc_attr( get_the_author_meta( 'cellophono', $user->ID ) ); ?>" class="regular-text" /><br />
-<span class="description"><?php _e("Telephone's number of Agent"); ?></span>
+<span class="description"><?php _e("Telephone's number of Agent",'immobilcio'); ?></span>
 </td>
 </tr>
 <tr>
-<th><label for="skype"><?php _e("Skype"); ?></label></th>
+<th><label for="skype"><?php _e("Skype",'immobilcio'); ?></label></th>
 <td>
 <input type="text" name="skype" id="skype" value="<?php echo esc_attr( get_the_author_meta( 'skype', $user->ID ) ); ?>" class="regular-text" /><br />
-<span class="description"><?php _e("Skype username of Agent"); ?></span>
+<span class="description"><?php _e("Skype username of Agent",'immobilcio'); ?></span>
 </td>
 </tr>
 </table>
@@ -1060,7 +1074,7 @@ class Simple_Local_Avatars {
 		load_plugin_textdomain( 'simple-local-avatars', false, dirname( plugin_basename( __FILE__ ) ) . '/localization/' );
 		
 		register_setting( 'discussion', 'simple_local_avatars_caps', array( $this, 'sanitize_options' ) );
-		add_settings_field( 'simple-local-avatars-caps', __('Local Avatar Permissions','simple-local-avatars'), array( $this, 'avatar_settings_field' ), 'discussion', 'avatars' );
+		add_settings_field( 'simple-local-avatars-caps', __('Local Avatar Permissions','immobilcio'), array( $this, 'avatar_settings_field' ), 'discussion', 'avatars' );
 	}
 	
 	public function sanitize_options( $input ) {
@@ -1074,7 +1088,7 @@ class Simple_Local_Avatars {
 		echo '
 			<label for="simple_local_avatars_caps">
 				<input type="checkbox" name="simple_local_avatars_caps" id="simple_local_avatars_caps" value="1" ' . @checked( $options['simple_local_avatars_caps'], 1, false ) . ' />
-				' . __('Only allow users with file upload capabilities to upload local avatars (Authors and above)','simple-local-avatars') . '
+				' . __('Only allow users with file upload capabilities to upload local avatars (Authors and above)','immobilcio') . '
 			</label>
 		';
 	}
@@ -1085,7 +1099,7 @@ class Simple_Local_Avatars {
 	
 	<table class="form-table">
 		<tr>
-			<th><label for="simple-local-avatar"><?php _e('Upload Logo Real Estate Agency','simple-local-avatars'); ?></label></th>
+			<th><label for="simple-local-avatar"><?php _e('Upload Logo Real Estate Agency','immobilcio'); ?></label></th>
 			<td style="width: 50px;" valign="top">
 				<?php echo get_avatar( $profileuser->ID ); ?>
 			</td>
@@ -1100,17 +1114,17 @@ class Simple_Local_Avatars {
 					<input type="file" name="simple-local-avatar" id="simple-local-avatar" /><br />
 			<?php
 					if ( empty( $profileuser->simple_local_avatar ) )
-						echo '<span class="description">' . __('No local avatar is set. Use the upload field to add a local avatar.','simple-local-avatars') . '</span>';
+						echo '<span class="description">' . __('No local avatar is set. Use the upload field to add a local avatar.','immobilcio') . '</span>';
 					else 
 						echo '
-							<input type="checkbox" name="simple-local-avatar-erase" value="1" /> ' . __('Delete local avatar','simple-local-avatars') . '<br />
-							<span class="description">' . __('Replace the local avatar by uploading a new avatar, or erase the local avatar (falling back to a gravatar) by checking the delete option.','simple-local-avatars') . '</span>
+							<input type="checkbox" name="simple-local-avatar-erase" value="1" /> ' . __('Delete local avatar','immobilcio') . '<br />
+							<span class="description">' . __('Replace the local avatar by uploading a new avatar, or erase the local avatar (falling back to a gravatar) by checking the delete option.','immobilcio') . '</span>
 						';		
 				} else {
 					if ( empty( $profileuser->simple_local_avatar ) )
-						echo '<span class="description">' . __('No local avatar is set. Set up your avatar at Gravatar.com.','simple-local-avatars') . '</span>';
+						echo '<span class="description">' . __('No local avatar is set. Set up your avatar at Gravatar.com.','immobilcio') . '</span>';
 					else 
-						echo '<span class="description">' . __('You do not have media management permissions. To change your local avatar, contact the blog administrator.','simple-local-avatars') . '</span>';
+						echo '<span class="description">' . __('You do not have media management permissions. To change your local avatar, contact the blog administrator.','immobilcio') . '</span>';
 				}
 			?>
 			</td>
@@ -1149,10 +1163,10 @@ class Simple_Local_Avatars {
 			if ( empty($avatar['file']) ) {		// handle failures
 				switch ( $avatar['error'] ) {
 					case 'File type does not meet security guidelines. Try another.' :
-						add_action( 'user_profile_update_errors', create_function('$a','$a->add("avatar_error",__("Please upload a valid image file for the avatar.","simple-local-avatars"));') );				
+						add_action( 'user_profile_update_errors', create_function('$a','$a->add("avatar_error",__("Please upload a valid image file for the avatar.","immobilcio"));') );				
 						break;
 					default :
-						add_action( 'user_profile_update_errors', create_function('$a','$a->add("avatar_error","<strong>".__("There was an error uploading the avatar:","simple-local-avatars")."</strong> ' . esc_attr( $avatar['error'] ) . '");') );
+						add_action( 'user_profile_update_errors', create_function('$a','$a->add("avatar_error","<strong>".__("There was an error uploading the avatar:","immobilcio")."</strong> ' . esc_attr( $avatar['error'] ) . '");') );
 				}
 				
 				return;
