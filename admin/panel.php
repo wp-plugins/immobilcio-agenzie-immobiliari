@@ -44,8 +44,8 @@ function immob_render_form() {
 		
 		<!-- Display Plugin Icon, Header, and Description -->
 		<div class="icon32" id="icon-options-general"><br></div>
-		<h2><?php echo __('ImmobilCIO Options Admin Page'); ?></h2>
-		<p><?php echo __('These are the options and instructions to configure and use ImmobilCIO.'); ?></p>
+		<h2><?php echo __('ImmobilCIO Options Admin Page','immobilcio'); ?></h2>
+		<p><?php echo __('These are the options and instructions to configure and use ImmobilCIO.', 'immobilcio'); ?></p>
 
 		<!-- Beginning of the Plugin Options Form -->
 		<form method="post" action="options.php">
@@ -57,7 +57,7 @@ function immob_render_form() {
 			<table class="form-table">
 
 				<tr>
-					<th scope="row"><?php echo __("Currency"); ?></th>
+					<th scope="row"><?php echo __("Currency",'immobilcio'); ?></th>
 					<td>
 						<select name='immob_options[chk_currency]'>
 							<option value='$' <?php selected('usa', isset($options['chk_currency'])); ?>>$</option>
@@ -68,32 +68,32 @@ function immob_render_form() {
 				</tr>
 
 				<tr valign="top">
-					<th scope="row"><?php echo __("Activate Google Maps"); ?></th>
+					<th scope="row"><?php echo __("Activate Google Maps", 'immobilcio'); ?></th>
 					<td>
 						<label><input name="immob_options[act_maps]" type="checkbox" value="1" <?php if (isset($options['act_maps'])) { checked('1', $options['act_maps']); } ?> /><br />
 						<span style="color:#666666;margin-left:2px;">
-							<?php echo __("If you can activate maps of real estate in single post, you can check this option.<br /><span style=\"color:#666666;margin-left:2px;\">You can use shortcode for inserting map on your theme</span>"); ?></label>
+							<?php echo __("If you can activate maps of real estate in single post, you can check this option.<br /><span style=\"color:#666666;margin-left:2px;\">You can use shortcode for inserting map on your theme</span>",'immobilcio'); ?></label>
 						</span>
 						</label>
 					</td>
 				</tr>
 
 				<tr valign="top">
-					<th scope="row"><?php echo __("Width - Google Maps"); ?></th>
+					<th scope="row"><?php echo __("Width - Google Maps", 'immobilcio'); ?></th>
 					<td>
 						<label><input type="text" size="5" name="immob_options[chk_mapw]" value="<?php echo $options['chk_mapw']; ?>" /><br />
 						<span style="color:#666666;margin-left:2px;">
-							<?php echo __("Insert width in pixel"); ?></label>
+							<?php echo __("Insert width in pixel", 'immobilcio'); ?></label>
 						</span>
 						</label>
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php echo __("Height - Google Maps"); ?></th>
+					<th scope="row"><?php echo __("Height - Google Maps", 'immobilcio'); ?></th>
 					<td>
 						<label><input type="text" size="5" name="immob_options[chk_maph]" value="<?php echo $options['chk_maph']; ?>" /><br />
 						<span style="color:#666666;margin-left:2px;">
-							<?php echo __("Insert height in pixel"); ?></label>
+							<?php echo __("Insert height in pixel", 'immobilcio'); ?></label>
 						</span>
 						</label>
 					</td>
@@ -106,7 +106,7 @@ function immob_render_form() {
 		</form>
 
 		<p style="margin-top:15px;">
-			<p style="font-style: italic;font-weight: bold;color: #26779a;">If you want to support the development of ImmobilCIO can think about <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZYDK3C2X89Z4E" target="_blank" style="color:#72a1c6;">making a donation</a>. The developers will thank you :-)
+			<p style="font-style: italic;font-weight: bold;color: #26779a;">If you want to support the development of ImmobilCIO can think about <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TCSXDWVY8VC5W" target="_blank" style="color:#72a1c6;">making a donation</a>. The developers will thank you :-)
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="ZYDK3C2X89Z4E">
@@ -137,7 +137,7 @@ function immob_validate_options($input) {
 function immob_plugin_action_links( $links, $file ) {
 
 	if ( $file == plugin_basename( __FILE__ ) ) {
-		$immob_links = '<a href="'.get_admin_url().'options-general.php?page=/index.php">'.__('Settings').'</a>';
+		$immob_links = '<a href="'.get_admin_url().'options-general.php?page=/index.php">'.__('Settings','immobilcio').'</a>';
 		// make the 'Settings' link appear first
 		array_unshift( $links, $immob_links );
 	}
