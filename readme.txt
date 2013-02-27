@@ -9,9 +9,11 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 ImmobilCIO gives new features on WordPress for Real Estate Agency.
+ImmobilCIO fornisce nuove caratteristiche sul pannello WordPress per le Agenzie Immobiliari.
 
 == Description ==
 
+[ENG]
 ImmobilCIO gives new features on WordPress for Real Estate Agency.
 
 This plugin creates one custom post type for properties, one metabox, two taxonomies and gives you a widget where you display last property published and a options page.
@@ -25,6 +27,17 @@ ImmobilCIO is multilanguages : you can create your localization and put it in `/
 On options page you can activate or deactivate display maps on single post.
 
 New features are coming for next release.
+
+[ITA]
+ImmobilCIO fornisce nuove caratteristiche sul pannello WordPress per le Agenzie Immobiliari.
+
+Questo plugin utile per le Agenzie Immobiliari che volessero utilizzare WordPress per il proprio sito web, crea un nuovo custom post type, un metabox per l' inserimento dettagli sul singolo immobile e due box tassonomie per categorizzare l' immobile in fasce di prezzo ed in zone.
+
+ImmobilCIO supporta la localizzazione e quindi può essere tradotto in più lingue. In `/immobilicio/lang/` verranno inserite le varie traduzioni.
+
+Nella pagina Opzioni di ImmobilCIO puoi attivare/disattivare la visualizzazione della Google Maps nei singolo post.
+
+Nuove funzionalità arriveranno nelle prossime release.
 
 == Installation ==
 
