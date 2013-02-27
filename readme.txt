@@ -9,7 +9,7 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 ImmobilCIO gives new features on WordPress for Real Estate Agency.
-ImmobilCIO fornisce nuove caratteristiche sul pannello WordPress per le Agenzie Immobiliari.
+ImmobilCIO fornisce nuove caratteristiche per le Agenzie Immobiliari.
 
 == Description ==
 
